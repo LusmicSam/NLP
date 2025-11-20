@@ -1,0 +1,25 @@
+{
+  "devices": [
+    {
+      "name": "Phone_1_HelioG35",
+      "ram_gb": 4,
+      "cpus": 8,
+      "storage_gb": 64,
+      "description": "HelioG35 Octacore 4GB RAM"
+    },
+    {
+      "name": "Phone_2_SM8150",
+      "ram_gb": 8,
+      "cpus": 8,
+      "storage_gb": 128,
+      "description": "SM8150 8 cores 8GB RAM"
+    },
+    {
+      "name": "Phone_3_iPhone_A15",
+      "ram_gb": 6,
+      "cpus": 6,
+      "storage_gb": 128,
+      "description": "A15 6 cores 6GB RAM"
+    }
+  ]
+}
