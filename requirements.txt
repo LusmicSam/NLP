@@ -1,0 +1,12 @@
+# requirements.txt
+transformers>=4.35.0
+huggingface_hub
+optimum
+optimum-intel  # For quantization
+bitsandbytes>=0.41.0  # For INT8/INT4
+sentencepiece
+torch>=2.1.0
+accelerate
+scipy  # For pruning
+peft  # For LoRA
+psutil  # For memory monitoring

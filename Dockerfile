@@ -1,24 +1,10 @@
-# Use a basic Ubuntu image
-FROM ubuntu:22.04
-
-# Set up environment
-ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get install -y \
-    python3-pip \
-    python3-dev \
-    build-essential \
-    git
-
-# Install the Python libraries
-# We install llama-cpp-python and psutil for monitoring
-RUN pip3 install llama-cpp-python psutil
-
-# Set a working directory inside the container
+FROM python:3.10-slim
 WORKDIR /app
-
-# Copy your local benchmarking script (which we'll create next)
-# into the container's /app directory
-COPY benchmark.py /app/benchmark.py
-
-# Default command to keep the container running
-CMD ["/bin/bash"]
+COPY requirements.txt ./
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
+ENV TRANSFORMERS_CACHE=/app/.cache/huggingface
+ENV HF_HOME=/app/.cache/huggingface
+COPY . .
+CMD ["python", "benchmark.py"]
+ENV HUGGING_FACE_HUB_TOKEN="USE HUGGINF FACE TOKKEN ON READ MODE HERE"
