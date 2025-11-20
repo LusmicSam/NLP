@@ -7,4 +7,4 @@ ENV TRANSFORMERS_CACHE=/app/.cache/huggingface
 ENV HF_HOME=/app/.cache/huggingface
 COPY . .
 CMD ["python", "benchmark.py"]
-ENV HUGGING_FACE_HUB_TOKEN="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"
+ENV HUGGING_FACE_HUB_TOKEN="HUGE"
